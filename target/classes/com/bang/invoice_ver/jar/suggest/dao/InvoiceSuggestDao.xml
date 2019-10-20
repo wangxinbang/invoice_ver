@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bang.invoice_ver.jar.suggest.dao.InvoiceSuggestDao">
+
+	<update id="voidInvoiceSuggest" parameterType="map">
+	</update>
+
+	<update id="updateInvoiceSuggest" parameterType="map">
+	</update>
+
+	<insert id="insertInvoiceSuggest" parameterType="com.bang.invoice_ver.jar.suggest.bean.InvoiceSuggestBean">
+		INSERT INTO invoice_suggest (
+		  open_id,
+		  user_phone,
+		  suggest,
+		  create_time
+		) 
+		VALUES
+		(
+		  #{openId},
+		  #{userPhone},
+		  #{suggest},
+		  UNIX_TIMESTAMP()
+		  )
+	</insert>
+	
+	<select id="getInvoiceSuggestById" resultType="com.bang.invoice_ver.jar.suggest.bean.InvoiceSuggestBean">
+		SELECT 
+		  id,
+		  open_id AS openId,
+		  user_phone AS userPhone,
+		  suggest,
+		  create_time AS createTime 
+		WHERE id = #{id} 
+	</select>
+
+</mapper>

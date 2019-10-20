@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bang.invoice_ver.jar.invoice.dao.InvoiceInfoDao">
+
+	<update id="voidInvoiceInfo" parameterType="map">
+		UPDATE invoice_info SET STATUS = 0 WHERE invoice_code = #{invoiceCode} AND invoice_num = #{invoiceNum}
+	</update>
+
+	<update id="updateInvoiceInfo" parameterType="map">
+		
+	</update>
+
+	<insert id="insertInvoiceInfo" parameterType="com.bang.invoice_ver.jar.invoice.bean.InvoiceInfoBean">
+		INSERT INTO invoice_info (
+		  open_id,
+		  user_phone,
+		  invoice_code,
+		  invoice_num,
+		  open_time,
+		  check_code,
+		  invoice_json,
+		  screen_shot_url,
+		  risk_type,
+		  fee_type,
+		  invoice_type,
+		  invoice_amount,
+		  STATUS,
+		  remark,
+		  create_time
+		) 
+		VALUES (
+		  #{open_id},
+		  #{user_phone},
+		  #{invoice_code},
+		  #{invoice_num},
+		  #{open_time},
+		  #{check_code},
+		  #{invoice_json},
+		  #{screen_shot_url},
+		  #{risk_type},
+		  #{fee_type},
+		  #{invoice_type},
+		  #{invoice_amount},
+		  1,
+		  #{remark},
+		  UNIX_TIMESTAMP()  
+		)
+	</insert>
+	
+	<select id="getInvoiceInfoByCodeAndNum" parameterType="map" resultType="com.bang.invoice_ver.jar.invoice.bean.InvoiceInfoBean">
+		SELECT 
+		  id,
+		  open_id AS openId,
+		  user_phone AS userPhone,
+		  invoice_num AS invoiceNum,
+		  open_time AS openTime,
+		  check_code AS checkCode,
+		  invoice_json AS invoiceJson,
+		  screen_shot_url AS screenShotUrl,
+		  risk_type AS riskType,
+		  fee_type AS feeType,
+		  invoice_type AS invoiceType,
+		  invoice_amount AS invoiceAmount,
+		  STATUS,
+		  remark,
+		  create_time AS createTime 
+		FROM
+		  invoice_info 
+	 	WHERE STATUS = 1 AND invoice_code = #{invoiceCode} AND invoice_num = #{invoiceNum}
+	</select>
+	
+	<select id="getInvoiceInfoById" resultType="com.bang.invoice_ver.jar.invoice.bean.InvoiceInfoBean">
+		SELECT 
+		  id,
+		  open_id AS openId,
+		  user_phone AS userPhone,
+		  invoice_num AS invoiceNum,
+		  open_time AS openTime,
+		  check_code AS checkCode,
+		  invoice_json AS invoiceJson,
+		  screen_shot_url AS screenShotUrl,
+		  risk_type AS riskType,
+		  fee_type AS feeType,
+		  invoice_type AS invoiceType,
+		  invoice_amount AS invoiceAmount,
+		  STATUS,
+		  remark,
+		  create_time AS createTime 
+		FROM
+		  invoice_info 
+	 	WHERE id = #{id}
+	</select>
+
+</mapper>

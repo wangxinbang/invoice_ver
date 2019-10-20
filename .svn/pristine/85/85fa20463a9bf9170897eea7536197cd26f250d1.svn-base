@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+     <title>风险发票详情</title>
+     
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+    <style type="text/css">
+      
+      .container {
+        margin-top: 2em;
+
+      }
+      .card {
+        width: auto !important;
+        box-shadow: none !important;
+      }
+    </style>
+    <script type="text/javascript">
+      $(function() {
+        $('.image').on('click', function(e){$('#gotoinfo').click();});
+      });
+    </script>
+  </head>
+  <body>
+    <div class="ui container">  
+     
+    <a href="./billpic.html"><span id="gotoinfo"></span></a>
+
+     <div class="ui card">
+      <div class="content">
+        <span class="right floated">查看截图<i class="image icon"></i></span>
+        <div class="header"> 增值税普通发票 </div>
+        <div class="description">
+          <div class="ui label"> 过期 </div>
+          <div class="ui label"> 金额过大 </div>
+          <div class="ui accordion">
+            <div class="active title"> 发票号码： ASDF12330067865 </div>
+            <div class="active title"> 发票税额： ¥1000.00 </div>
+            <div class="active title"> 发票号码： ASDF12330067865 </div>
+            <div class="active title"> 发票税额： ¥1000.00 </div>
+            <div class="active title"> 发票号码： ASDF12330067865 </div>
+            <div class="active title"> 发票税额： ¥1000.00 </div>
+            <div class="title"><i class="dropdown icon"></i> 购买方 </div>
+            <div class="content">
+              <p>购买方购买方购买方购买方</p>
+              <p>购买方购买方购买方购买方</p>
+              <p>购买方购买方购买方购买方</p>
+            </div>
+            <div class="title"><i class="dropdown icon"></i> 商品行 </div>
+            <div class="content">
+              <p>商品行商品行商品行商品行</p>
+              <p>商品行商品行商品行商品行</p>
+            </div>
+            <div class="title"><i class="dropdown icon"></i> 商品行 </div>
+            <div class="content">
+              <p>商品行商品行商品行商品行</p>
+              <p>商品行商品行商品行商品行</p>
+            </div>
+            <div class="title"><i class="dropdown icon"></i>商品行</div>
+            <div class="content">
+              <p>商品行商品行商品行商品行</p>
+              <p>商品行商品行商品行商品行</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="ui comments">
+  <div class="comment">
+    <div class="content">
+      <form class="ui reply form">
+        <div class="field">
+          <textarea></textarea>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="ui tag labels">
+  <a class="ui label"> 个人原因 </a>
+  <a class="ui label">公司原因 </a>
+  <a class="ui label">发票自身原因 </a>
+</div>
+
+      <div class="extra content">
+        <span class="left floated like">继续报销 </span>
+        <span class="right floated star">放弃报销 </span>
+        <div class="ui buttons">
+      </div>
+    </div>
+
+          
+      
+
+
+
+    </div>
+  </body>
+</html>

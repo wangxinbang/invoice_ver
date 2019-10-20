@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bang.invoice_ver.jar.user.dao.InvoiceUserDao">
+
+	<update id="voidInvoiceUser" parameterType="map">
+		UPDATE invoice_user SET STATUS = 0 WHERE open_id = #{openId}
+	</update>
+
+	<update id="updateInvoiceUser" parameterType="map">
+		
+	</update>
+
+	<insert id="insertInvoiceUser" parameterType="com.bang.invoice_ver.jar.user.bean.InvoiceUserBean">
+		INSERT INTO invoice_user (
+		  open_id,
+		  user_phone,
+		  user_name,
+		  user_type,
+		  tax_num,
+		  company_name,
+		  company_address,
+		  company_phone,
+		  company_open_bank,
+		  company_bank_account,
+		  STATUS,
+		  create_time
+		) 
+		VALUES
+		(
+		  #{openId},
+		  #{userPhone},
+		  #{userName},
+		  #{userType},
+		  #{taxNum},
+		  #{companyName},
+		  #{companyAddress},
+		  #{companyPhone},
+		  #{companyOpenBank},
+		  #{companyBankAccount},
+		  1,
+		  UNIX_TIMESTAMP()
+	</insert>
+	
+	<select id="getInvoiceUserByOpenId" resultType="com.bang.invoice_ver.jar.user.bean.InvoiceUserBean">
+		SELECT 
+		  id,
+		  open_id AS openId,
+		  user_phone AS userPhone,
+		  user_name AS userName,
+		  tax_num AS taxNum,
+		  company_name AS companyName,
+		  company_address AS companyAddress,
+		  company_open_bank AS companyOpenBank,
+		  company_bank_account AS companyBankAdderss,
+		  STATUS,
+		  create_time AS createTime 
+		FROM
+		  invoice_user 
+		WHERE STATUS = 1 AND open_id = #{openId}
+	</select>
+
+</mapper>

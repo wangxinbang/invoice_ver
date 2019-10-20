@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=0">
+<title>答案之书</title>
+<link rel="stylesheet" href="css/wx/weui.css" />
+<link rel="stylesheet" href="css/wx/weui.min.css" />
+<link rel="stylesheet" href="css/wx/example.css" />
+</head>
+<body ontouchstart>
+	<div class="container" id="container">
+		<div class="page" style="opacity:1">
+			<div class="page__hd">
+		        <h1 class="page_title">答案之书</h1>
+		        <p class="page_desc">窥探你的未来,做出你最好的决定</p>
+		    </div>
+			<div class="page__bd">
+				<div class="weui-cells">
+					<div class="weui-cell">
+		                <div class="weui-cell__bd">
+		                    <p>1.思考出一个你想知道问题</p>
+		                </div>
+<!-- 		                <div class="weui-cell__ft">说明文字</div> -->
+		            </div>
+					<div class="weui-cell">
+		                <div class="weui-cell__bd">
+		                    <p>2.闭上眼睛,默想问题三遍,强化量子磁场</p>
+		                </div>
+		            </div>
+					<div class="weui-cell">
+		                <div class="weui-cell__bd">
+		                    <p>3.做一个深呼吸</p>
+		                </div>
+		            </div>
+					<div class="weui-cell">
+		                <div class="weui-cell__bd">
+		                    <p>4.睁开眼睛点击【答案】按钮</p>
+		                </div>
+		            </div>
+					<div class="weui-cell">
+		                <div class="weui-cell__bd">
+		                    <p>5.希望对你的人生有所帮助</p>
+		                </div>
+		            </div>
+				</div>
+				<br/>
+				<div class="weui-btn-area">
+					<a class="weui-btn weui-btn_plain-primary" id="submitBtn">答案</a>
+				</div>
+			</div>
+			<div class="page__ft">
+				<a href="javascript:home()"><img src="img/wx/icon_footer_link.png" /></a>
+			</div>
+			<div id="loadingToast" style="display:none;">
+		        <div class="weui-mask_transparent"></div>
+		        <div class="weui-toast">
+		            <i class="weui-loading weui-icon_toast"></i>
+		            <p class="weui-toast__content">磁针旋转中</p>
+		        </div>
+		    </div>
+		</div>
+	</div>
+	<script src="js/wx/zepto.min.js"></script>
+	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script src="js/wx/weui.min.js"></script>
+	<script src="js/wx/book_of_answer.js"></script>
+</body>
+</html>

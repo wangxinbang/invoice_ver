@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=0">
+<title>答案之书</title>
+<link rel="stylesheet" href="css/wx/weui.css" />
+<link rel="stylesheet" href="css/wx/weui.min.css" />
+<link rel="stylesheet" href="css/wx/example.css" />
+</head>
+<body ontouchstart>
+	<div class="container" id="container">
+		<div class="page" style="opacity:1">
+			<div class="page__hd">
+		        <h1 class="page_title">答案之书</h1>
+		    </div>
+			<div class="page__bd">
+				<div class="weui-cells">
+					<div class="weui-cell" style="line-height:6">
+		                <div class="weui-cell__bd">
+		                    <p id="answerP">...</p>
+		                </div>
+		            </div>
+				</div>
+				<br/>
+				<div class="weui-btn-area">
+					<a class="weui-btn weui-btn_plain-primary" href="javascript:history.back(-1)">继续提问</a>
+					<a class="weui-btn weui-btn_plain-default" id="backBtn" href="javascript:history.back(-1)">返回</a>
+				</div>
+			</div>
+			<div class="page__ft">
+				<a href="javascript:home()"><img src="img/wx/icon_footer_link.png" /></a>
+			</div>
+		</div>
+	</div>
+	<script src="js/wx/zepto.min.js"></script>
+	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script src="js/wx/weui.min.js"></script>
+	<script src="js/wx/the_answer.js"></script>
+</body>
+</html>

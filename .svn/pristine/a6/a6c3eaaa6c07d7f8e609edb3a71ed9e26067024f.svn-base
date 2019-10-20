@@ -1,0 +1,21 @@
+package test.bang.invoice_ver;
+
+import java.io.IOException;
+
+import org.apache.http.client.ClientProtocolException;
+import org.junit.Test;
+
+import com.alibaba.fastjson.JSONObject;
+import com.bang.invoice_ver.utils.HttpClientUtil;
+
+public class TestControllerTest {
+    
+    @Test
+    public void test() throws ClientProtocolException, IOException{
+        JSONObject objs = new JSONObject();
+        objs.put("q", "q");
+        String s = HttpClientUtil.post("http://localhost/invoice_ver/test/testm.do", "111");
+        System.out.println(s);
+    }
+
+}

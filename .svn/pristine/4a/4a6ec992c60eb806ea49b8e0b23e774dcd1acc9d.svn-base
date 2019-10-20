@@ -1,0 +1,74 @@
+#统一配置文件
+
+############################################日志相关############################################
+#日志路径
+log_path=E:/worfile/docs/log/invoice_ver
+#日志级别
+log_level=debug
+
+##########【mysql配置】
+#主库1
+common_platform_mysql_master001.url=jdbc:mysql://rm-uf639628b1lh38251o.mysql.rds.aliyuncs.com:3306/invoice_ver
+common_platform_mysql_master001.username=root
+common_platform_mysql_master001.password=bang001#
+common_platform_mysql_master001.filters=stat
+common_platform_mysql_master001.maxActive=100
+common_platform_mysql_master001.initialSize=50
+common_platform_mysql_master001.maxWait=600000
+common_platform_mysql_master001.minIdle=30
+common_platform_mysql_master001.timeBetweenEvictionRunsMillis=60000
+common_platform_mysql_master001.minEvictableIdleTimeMillis=30000
+common_platform_mysql_master001.validationQuery=select count(*) FROM DUAL
+common_platform_mysql_master001.testWhileIdle=true
+common_platform_mysql_master001.testOnBorrow=false
+common_platform_mysql_master001.testOnReturn=false
+common_platform_mysql_master001.poolPreparedStatements=true
+common_platform_mysql_master001.maxPoolPreparedStatementPerConnectionSize=50
+
+#主库1->从库1
+common_platform_mysql_master001_slave001.url=jdbc:mysql://rm-uf639628b1lh38251o.mysql.rds.aliyuncs.com:3306/invoice_ver
+common_platform_mysql_master001_slave001.username=root
+common_platform_mysql_master001_slave001.password=bang001#
+common_platform_mysql_master001_slave001.filters=stat
+common_platform_mysql_master001_slave001.maxActive=100
+common_platform_mysql_master001_slave001.initialSize=50
+common_platform_mysql_master001_slave001.maxWait=600000
+common_platform_mysql_master001_slave001.minIdle=30
+common_platform_mysql_master001_slave001.timeBetweenEvictionRunsMillis=60000
+common_platform_mysql_master001_slave001.minEvictableIdleTimeMillis=30000
+common_platform_mysql_master001_slave001.validationQuery=select count(*) FROM DUAL
+common_platform_mysql_master001_slave001.testWhileIdle=true
+common_platform_mysql_master001_slave001.testOnBorrow=false
+common_platform_mysql_master001_slave001.testOnReturn=false
+common_platform_mysql_master001_slave001.poolPreparedStatements=true
+common_platform_mysql_master001_slave001.maxPoolPreparedStatementPerConnectionSize=50
+
+#主库1->从库2
+common_platform_mysql_master001_slave002.url=jdbc:mysql://rm-uf639628b1lh38251o.mysql.rds.aliyuncs.com:3306/invoice_ver
+common_platform_mysql_master001_slave002.username=root
+common_platform_mysql_master001_slave002.password=bang001#
+common_platform_mysql_master001_slave002.filters=stat
+common_platform_mysql_master001_slave002.maxActive=100
+common_platform_mysql_master001_slave002.initialSize=50
+common_platform_mysql_master001_slave002.maxWait=600000
+common_platform_mysql_master001_slave002.minIdle=30
+common_platform_mysql_master001_slave002.timeBetweenEvictionRunsMillis=60000
+common_platform_mysql_master001_slave002.minEvictableIdleTimeMillis=30000
+common_platform_mysql_master001_slave002.validationQuery=select count(*) FROM DUAL
+common_platform_mysql_master001_slave002.testWhileIdle=true
+common_platform_mysql_master001_slave002.testOnBorrow=false
+common_platform_mysql_master001_slave002.testOnReturn=false
+common_platform_mysql_master001_slave002.poolPreparedStatements=true
+common_platform_mysql_master001_slave002.maxPoolPreparedStatementPerConnectionSize=50
+
+##########【动态数据源配置参数】 
+#<!-- 数据库分库最大数据量 -->
+common.platform.db.max.num=500000
+#<!-- 主库数量 -->
+common.platform.master.num=1
+#<!-- 从库数量 -->
+common.platform.slave.num=2
+#<!-- 主库str -->
+common.platform.master.dbstr=common_platform_iqb_master00
+#<!-- 从库str -->
+common.platform.slave.dbstr=_slave00
