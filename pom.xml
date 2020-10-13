@@ -7,7 +7,7 @@
 	<packaging>war</packaging>
 	
 	<properties>
-		<junit.version>4.11</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- 依赖版本 -->
 		<mapper.version>3.3.8</mapper.version>
@@ -70,7 +70,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>4.13.1</version>
 			<scope>test</scope>
 		</dependency>
 
